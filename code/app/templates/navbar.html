@@ -17,23 +17,23 @@
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'home', 'value' : 1 });">Home</a>
       </li>
       {% if current_user.is_authenticated %}
       <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('upload', user=current_user.username) }}">Upload</a>
+          <a class="nav-link" href="{{ url_for('upload', user=current_user.username) }}" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'upload', 'value' : 1 });">Upload</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('queue', user=current_user.username) }}">Status</a>
+          <a class="nav-link" href="{{ url_for('queue', user=current_user.username) }}" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'status', 'value' : 1 });">Status</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('history', user=current_user.username) }}">History</a>
+          <a class="nav-link" href="{{ url_for('history', user=current_user.username) }}" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'history', 'value' : 1 });">History</a>
       </li>
       {% endif %}
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        <a class="nav-link" href="{{ url_for('about') }}" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'about', 'value' : 1 });">About</a>
       </li>
       {% if current_user.is_authenticated %}
 
@@ -41,7 +41,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ current_user.username }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/logout">Logout</a>
+          <a class="dropdown-item" href="/logout" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'logout', 'value' : 1 });">Logout</a>
         </div>
       </li>
       {% else %}

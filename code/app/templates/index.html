@@ -52,11 +52,11 @@ ARMR
 	        <center>{{ wtf.form_field(form.submit)}}</center>
 	    </form>
 	    <p>
-	    <center><a href="{{url_for('register')}}">Create new account</a></center>
+	    <center><a href="{{url_for('register')}}" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'create_account', 'value' : 1 });">Create new account</a></center>
 	   </div>
 	  {% else %}
 		<center><h4>{{ current_user.username }}</h4></center>
-		<center><a href="/logout" class="btn btn-primary">Log out</a></center>
+		<center><a href="/logout" class="btn btn-primary" onclick="gtag('event', 'reference', {'event_category' : 'button', 'event_label' : 'logout', 'value' : 1 });">Log out</a></center>
 	  {% endif %}
     </div>
 </div>
